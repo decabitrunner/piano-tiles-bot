@@ -28,3 +28,12 @@ import win32api, win32con
 4. __win32api__ - a windows api which lets us simulate clicks
 5. __win32con__ - another windows api which we use to emulate mouse movment
 
+### The click function
+
+```python
+def click(x,y):
+    win32api.SetCursorPos((x, y))
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
+    time.sleep(0.0001)
+```
+This function takes in the x, y cordinates of a pixel.
