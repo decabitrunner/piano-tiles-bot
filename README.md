@@ -52,3 +52,47 @@ Now we can use win32con to press down the left mouse button on the cursor positi
 time.sleep(0.0001)
 ```
 The reason we wait is because sometimes if there is no interval between the clicks they do not register.
+
+### The main loop
+
+```python
+time.sleep(3)
+y = 700
+while keyboard.is_pressed('q') == False:
+
+    if ag.pixel(745, y)[0]  == 0:
+        click(745, y)
+
+    if ag.pixel(876, y)[0] == 0:
+        click(876, y)
+
+    if ag.pixel(1046, y)[0] == 0:
+        click(1046, y)
+
+    if ag.pixel(1212, y)[0] == 0:
+        click(1212, y)
+```
+
+```python
+time.sleep(3)
+y = 700
+```
+We wait 3 seconds to give the user time to start the game after the script is ran.
+than set y to be a constant becuase the clicks can be in the same height 
+
+```python
+while keyboard.is_pressed('q') == False:
+```
+We define a loop that will run until a keypress of 'q' is False
+
+```python
+if ag.pixel(745, y)[0]  == 0:
+        click(745, y)
+```
+We check if the pixel with the color of (r, g, b)[0] (we can check for the first value becuase the rgb value of black is 0, 0, 0) is equal to 0
+if yes we click it, for a better visulization you can look at hiw the game looks 
+
+![alt text](https://github.com/decabitrunner/piano-tiles-bot/blob/main/res/to%20explain.PNG)
+
+_and the click, visulize_
+![alt text](https://github.com/decabitrunner/piano-tiles-bot/blob/main/res/visulized.PNG)
