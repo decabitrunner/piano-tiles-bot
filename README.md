@@ -36,7 +36,7 @@ def click(x,y):
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
     time.sleep(0.0001)
 ```
-This function takes in the x, y cordinates of a pixel.
+This function takes in the x, y coordinates of a pixel.
 
 ```python
 win32api.SerCursorPos((x, y))
@@ -94,5 +94,65 @@ if yes we click it, for a better visulization you can look at hiw the game looks
 
 ![alt text](https://github.com/decabitrunner/piano-tiles-bot/blob/main/res/to%20explain.PNG)
 
-_and the click, visulize_
+__and the click, visulize__
+
 ![alt text](https://github.com/decabitrunner/piano-tiles-bot/blob/main/res/visulized.PNG)
+
+We do this for every four colums
+```python
+    if ag.pixel(745, y)[0]  == 0:
+        click(745, y)
+
+    if ag.pixel(876, y)[0] == 0:
+        click(876, y)
+
+    if ag.pixel(1046, y)[0] == 0:
+        click(1046, y)
+
+    if ag.pixel(1212, y)[0] == 0:
+        click(1212, y)
+```
+
+## How to try it (if you want to)
+
+### Get the cooardinates
+
+To get cordinates on your screen you can use a usfull function,
+``` python
+pyautogui.displayMousePosition()
+```
+This will display the coordinates and rgb color of the pixel your cursor is on
+
+The output will look something like this
+``` 
+Press Ctrl-C to quit.
+X:  680 Y:  469 RGB: (255, 255, 255)
+X: 1312 Y:  586 RGB: (  0,   0,   0)
+X: 1218 Y:  278 RGB: (  0,   0,   0)
+X: 1141 Y:  614 RGB: (  0,   0,   0)
+X:  804 Y:  373 RGB: (255, 255, 255)
+X:  270 Y:  551 RGB: (255, 255, 255)
+X:  284 Y:  240 RGB: (  0,   0,   0)
+X:  358 Y:  621 RGB: (255, 255, 255)
+X:  203 Y:  526 RGB: (  0,   0,   0)
+X:  193 Y:  659 RGB: (  0,   0,   0)
+```
+
+You can use this to find the x of every colum 
+
+change the y as you want
+```  python
+y = 700
+``` 
+
+than change the if statments to check for your coordinates
+
+```python
+if ag.pixel(876, y)[0] == 0:
+        click(876, y)
+```
+
+## What to take away from this
+
+It is very simple today to perform such tasks, perhaps you've learned how you could this,
+or perhaps yoy have understood that this isn't really such art, either way I felt the need to publish something like this. 
