@@ -37,3 +37,18 @@ def click(x,y):
     time.sleep(0.0001)
 ```
 This function takes in the x, y cordinates of a pixel.
+
+```python
+win32api.SerCursorPos((x, y))
+```
+we use win32api to set the cursor position (pased in a tuple)
+
+```python
+win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
+```
+Now we can use win32con to press down the left mouse button on the cursor position that we set in the line above
+
+```python
+time.sleep(0.0001)
+```
+The reason we wait is because sometimes if there is no interval between the clicks they do not register.
