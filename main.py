@@ -13,16 +13,8 @@ def click(x,y):
 
 time.sleep(3)
 y = 700
+x_cords = [745,876,1046,1212]
 while keyboard.is_pressed('q') == False:
-
-    if ag.pixel(745, y)[0]  == 0:
-        click(745, y)
-
-    if ag.pixel(876, y)[0] == 0:
-        click(876, y)
-
-    if ag.pixel(1046, y)[0] == 0:
-        click(1046, y)
-
-    if ag.pixel(1212, y)[0] == 0:
-        click(1212, y)
+  for cord in x_cords:
+      if ag.pixel(cord, y)[0]  == 0:
+          click(cord, y)
